@@ -1,0 +1,217 @@
+.dashboard {
+    animation: fadeIn 0.5s ease;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    margin-bottom: 5rem;
+    border-left: 3px solid var(--accent-green);
+    padding-left: 1.5rem;
+    opacity: 0.8;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card {
+    background: rgba(10, 25, 47, 0.6);
+    backdrop-filter: blur(12px);
+    color: var(--text-primary);
+    padding: 3.5rem 2.5rem;
+    width: 380px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border */
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    /* Slight radius */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient Overlay - Register (Blue) */
+.registerCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(47, 122, 249, 0.15), transparent 70%);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+/* Gradient Overlay - Verify (Green) */
+.verifyCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(10, 255, 220, 0.15), transparent 70%);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.registerCard:hover {
+    box-shadow: 0 0 30px rgba(47, 122, 249, 0.2);
+    border-color: var(--accent-blue);
+}
+
+.verifyCard:hover {
+    box-shadow: 0 0 30px rgba(10, 255, 220, 0.2);
+    border-color: var(--accent-green);
+}
+
+.registerCard:hover::before,
+.verifyCard:hover::before {
+    opacity: 0.8;
+}
+
+/* Technical Icons */
+.iconContainer {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.registerCard:hover .iconContainer {
+    border-color: var(--accent-blue);
+    background: rgba(47, 122, 249, 0.1);
+}
+
+.verifyCard:hover .iconContainer {
+    border-color: var(--accent-green);
+    background: rgba(10, 255, 220, 0.1);
+}
+
+.techIcon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+    transition: all 0.3s ease;
+}
+
+.registerCard .techIcon {
+    color: var(--accent-blue);
+}
+
+.verifyCard .techIcon {
+    color: var(--accent-green);
+}
+
+.card:hover .techIcon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px currentColor);
+}
+
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    max-width: 90%;
+}
+
+/* Tech decorations */
+.cornerTopLeft,
+.cornerBottomRight {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.cornerTopLeft {
+    top: 10px;
+    left: 10px;
+    border-top: 2px solid var(--text-secondary);
+    border-left: 2px solid var(--text-secondary);
+}
+
+.cornerBottomRight {
+    bottom: 10px;
+    right: 10px;
+    border-bottom: 2px solid var(--text-secondary);
+    border-right: 2px solid var(--text-secondary);
+}
+
+.registerCard:hover .cornerTopLeft,
+.registerCard:hover .cornerBottomRight {
+    border-color: var(--accent-blue);
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.verifyCard:hover .cornerTopLeft,
+.verifyCard:hover .cornerBottomRight {
+    border-color: var(--accent-green);
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,56 @@
+.connectBtn {
+    background: rgba(10, 255, 220, 0.1);
+    color: var(--accent-green);
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--accent-green);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.connectBtn:hover:not(:disabled) {
+    background: var(--accent-green);
+    color: var(--bg-primary);
+    box-shadow: 0 0 15px rgba(10, 255, 220, 0.4);
+}
+
+.connectBtn:disabled {
+    background: rgba(10, 255, 220, 0.05);
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+/* Glitch effect on hover could go here */
+
+.connected {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-green);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

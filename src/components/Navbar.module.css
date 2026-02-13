@@ -1,0 +1,60 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background-color: rgba(5, 10, 20, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-family: var(--font-main);
+    /* Keep main font for readability, or switch to mono */
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo::before {
+    content: "🛡️";
+    /* Or a technical icon */
+    filter: grayscale(100%);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.network {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: rgba(10, 25, 47, 0.5);
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.networkDot {
+    width: 6px;
+    height: 6px;
+    background-color: #ffd700;
+    box-shadow: 0 0 5px #ffd700;
+    border-radius: 50%;
+}
