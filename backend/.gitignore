@@ -1,0 +1,9 @@
+# Remix / Hardhat artifacts
+.states/
+artifacts/
+
+# Node modules (if using Hardhat later)
+node_modules/
+
+# Environment variables
+.env
