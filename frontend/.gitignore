@@ -24,6 +24,6 @@ dist-ssr
 *.sw?
 
 # Vite environment
-.evn
+.env
 .env.*
 !.env.example
